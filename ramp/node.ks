@@ -13,6 +13,14 @@ global nodeDob is (nodeNd:deltav:mag / nodeAccel).
 
 wait until vdot(facing:forevector, nodeFacing:forevector) >= 0.995 or nodeNd:eta <= nodeDob / 2.
 
+global nodeHang is (nodeNd:eta - nodeDob/2) - 3.
+if nodeHang > 0 {
+  runpath("warp.ks", nodeHang).
+  wait 3.
+}
+
+set warp to 0.
+
 global nodeDone  is false.
 global nodeDv0   is nodeNd:deltav.
 global nodeDvMin is nodeDv0:mag.
