@@ -9,8 +9,10 @@ runpath("launch.ks", 75000).
 runpath("circ.ks", obt:apoapsis).
 runpath("node.ks").
 
-deletepath("/boot").
+cd("/").
+
 deletepath("/ramp").
+deletepath("/boot").
 
 copypath("0:/node.ks", "").
 
